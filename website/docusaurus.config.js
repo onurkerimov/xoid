@@ -133,12 +133,12 @@ module.exports = {
     //   indexName: 'xxxx',
     //   contextualSearch: true,
     // },
-    // googleAnalytics: {
-    //   trackingID: 'xxxx',
-    // },
-    // gtag: {
-    //   trackingID: 'xxxx',
-    // },
+    googleAnalytics: {
+      trackingID: 'UA-145300540-2',
+    },
+    gtag: {
+      trackingID: 'UA-145300540-2',
+    },
     metadatas: [
       {
         name: 'description',
