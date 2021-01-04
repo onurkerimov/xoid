@@ -128,11 +128,10 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Docusaurus. Forked from reactnative.dev`,
     },
-    // algolia: {
-    //   apiKey: 'xxxx',
-    //   indexName: 'xxxx',
-    //   contextualSearch: true,
-    // },
+    algolia: {
+      apiKey: '76ffbf3768384b8c1ab9a8b865ad37d9',
+      indexName: 'xoid',
+    },
     googleAnalytics: {
       trackingID: 'UA-145300540-2',
     },
