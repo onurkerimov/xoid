@@ -1,23 +1,28 @@
 {
   "docs": {
-    "Introduction": ["getting-started", "api-overview"],
+    "Introduction": [
+      "getting-started",
+      "models",
+      "what-makes-xoid-different",
+      "api-overview"
+    ],
     "API Reference": [
       "api/create",
       "api/get",
       "api/set",
       "api/use",
       "api/subscribe",
-      "api/usestore",
       "api/current",
       "api/arrayof",
-      "api/objectof"
+      "api/objectof",
+      "api/usestore",
+      "api/usemodel"
     ],
     "Recipes": [
       "recipes/async",
       "recipes/local-state",
       "recipes/selectors",
-      "recipes/use-ful-patterns",
-      "recipes/models"
+      "recipes/use-ful-patterns"
     ]
   }
 }
