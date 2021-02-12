@@ -6,7 +6,6 @@ import {
   getValueByAddress,
   isRootData,
   Key,
-  override,
   transform,
 } from './utils'
 import { get, set } from '.'
@@ -52,6 +51,8 @@ export class Root<T, A> {
     // Determine substore addresses
     this.substores = this.model ? [] : getSubstores(this.state)
 
+    console.log(this.substores)
+
     if (this.model) this.ensureStores()
 
     this.store = transform(
@@ -87,6 +88,7 @@ export class Root<T, A> {
   private cleanup: (() => void)[] = []
   stateSetter: XSet = (value) => set(this.store, value)
   stateGetter: XGet = (item?: any) => {
+    // get own value, if no arg is supplied
     if (typeof item === 'undefined') return get(this.store)
     const data = getData(item)
     const unsubscribe = data.root.subscribe(this.otherStateListener)
@@ -121,15 +123,7 @@ export class Root<T, A> {
     nextValue: T
   ) => {
     if (object[key] === nextValue) return
-    if (
-      object[key] === this.state &&
-      typeof object[key] === 'object' &&
-      object[key] !== null
-    ) {
-      override(object[key] as any, nextValue as any)
-    } else {
-      object[key] = nextValue
-    }
+    object[key] = nextValue
 
     if (this.model) {
       this.ensureStores()
